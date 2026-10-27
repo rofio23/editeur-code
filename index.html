@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atelier — éditeur de code en ligne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand"><span class="logo" aria-hidden="true"></span>Atelier</div>
+  <div class="actions">
+    <button id="btn-run" class="btn primary" title="Ctrl + Entrée">Exécuter</button>
+    <button id="btn-preview" class="btn" aria-pressed="true">Aperçu</button>
+    <button id="btn-download" class="btn">Télécharger</button>
+    <button id="btn-theme" class="btn icon" aria-label="Changer de thème" title="Changer de thème"></button>
+  </div>
+</header>
+
+<main class="workbench">
+  <aside class="explorer" aria-label="Fichiers">
+    <div class="explorer-head">
+      <span>Fichiers</span>
+      <button id="btn-new" class="btn icon small" aria-label="Nouveau fichier" title="Nouveau fichier">+</button>
+    </div>
+    <ul id="file-list"></ul>
+  </aside>
+
+  <section class="editor-pane">
+    <div id="tabs" class="tabs" role="tablist"></div>
+    <div id="editor" class="editor"></div>
+  </section>
+
+  <section id="preview-pane" class="preview-pane">
+    <div class="preview-head">Aperçu</div>
+    <iframe id="preview" title="Aperçu" sandbox="allow-scripts allow-modals"></iframe>
+  </section>
+</main>
+
+<footer class="statusbar">
+  <span id="st-pos">Ln 1, Col 1</span>
+  <span id="st-lang">HTML</span>
+  <span id="st-save">Enregistré</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
